@@ -63,4 +63,12 @@ public class DataRetriever {
             stmt.executeUpdate();
         }
     }
+
+    public Team findTeamById(int i) {
+        return null;
     }
+
+    public Team saveTeam(Team newTeam) {
+        return newTeam;
+    }
+}

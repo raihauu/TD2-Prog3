@@ -16,17 +16,17 @@ public class Team {
         this.players = new ArrayList<>();
     }
 
-    // Getter pour le nombre de joueurs
+
     public Integer getPlayersCount() {
         return players.size();
     }
 
-    // Ajouter un joueur à l'équipe
+
     public void addPlayer(Player player) {
         players.add(player);
     }
 
-    // Getters & setters (optionnels selon le sujet)
+
     public int getId() {
         return id;
     }
@@ -43,4 +43,16 @@ public class Team {
         return players;
     }
 
+    public Integer getPlayersGoals() {
+        int total = 0;
+        for (Player p : players) {
+            if (p.getGoalNb() == null) {
+                throw new IllegalStateException(
+                        "Le nombre de buts du joueur " + p.getName() + " est inconnu, impossible de calculer le total"
+                );
+            }
+            total += p.getGoalNb();
+        }
+        return total;
+    }
 }
